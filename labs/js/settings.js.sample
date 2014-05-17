@@ -1,0 +1,12 @@
+require([], function (){
+
+  //SolrのURLなど、環境に依存する設定情報はここに記述する
+  var settings = {
+    'labs': {
+      'solrUrl': '<INPUT YOUR SOLR URL>',
+      'recommenderUrl': "http://lab.kn.ndl.go.jp/exp/kui/api/solr/"
+    }
+  }
+
+  return settings;
+});

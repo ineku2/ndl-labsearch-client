@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>NDLラボサーチ</title>
+        <link rel="stylesheet" href="labs/css/labs.css">
+        <link rel="stylesheet" href="labs/css/jquery-ui.css">
+        <link rel="stylesheet" href="labs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="labs/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <p class="nav-sidebar clearfix">
+            <a id="facet-toggle" class="sidebar-toggle"><span class="glyphicon glyphicon-align-justify"></span> 絞り込み</a>
+            <a id="advanced-service-toggle" class="sidebar-toggle">ブックマーク <span class="glyphicon glyphicon-align-justify"></span></a>
+        </p>
+        <div id="header">
+            <form class="container" id="search" action = "return false;" role="form">
+                <div class="row keyword-area">
+                    <span class="col-md-1 col-sm-1"></span>
+                    <h1 id="system-name" class="col-md-3 col-sm-3"><a href="./labs.html" class="home-link"></a></h1>
+                    <div class="keyword-search-box col-md-8 col-sm-8">
+                        <label id="keyword-search">
+                            <input type="text" id="keyword" name="keyword" autocomplete="on">
+                            <button id="searchbutton" class="searchbutton" type="submit" name="search-button">検索</button>
+                        </label>
+                        <a href="#advanced" class="advanced_button">詳細検索</a>
+                    </div>
+                </div>
+
+                <div id="advanced" class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <div id="advanced-fields" class="form-inline">
+                            <div class="form-group">
+                                <label for="title">タイトル</label>
+                                <input type="text" id="title" name="title_cjk_norm_text">
+                            </div>
+                            <div class="form-group">
+                                <label for="author">著者名</label>
+                                <input type="text" id="author" name="author_cjk_norm_text">
+                            </div>
+                            <div class="form-group">
+                                <label for="publisher">出版者</label>
+                                <input type="text" id="publisher" name="publisher_cjk_norm_text">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">件名</label>
+                                <input type="text" id="subject" name="subject_cjk_norm_text">
+                            </div>
+                            <div class="form-group">
+                                <label for="ndc">分類記号</label>
+                                <input type="text" id="ndc" name="ndc_class_sm">
+                            </div>
+                            <div class="form-group">
+                                <label for="isbn">ISBN</label>
+                                <input type="text" id="isbn" name="isbn_sm">
+                            </div>
+                        </div>
+                        <div id="mediatypes">
+                            <label class="caption"><span>資料種別</span></label>
+                            <label class="checkbox-inline"><input id="mediatype_book" type="checkbox" value="1"  name="ui_media_type_sm" checked="checked">本</label>
+                            <label class="checkbox-inline"><input id="mediatype_magazine" type="checkbox" value="2"  name="ui_media_type_sm" checked="checked">雑誌</label>
+                            <label class="checkbox-inline"><input id="mediatype_newsp" type="checkbox" value="3"  name="ui_media_type_sm" checked="checked">新聞</label>
+                            <label class="checkbox-inline"><input id="mediatype_electoric" type="checkbox" value="4"  name="ui_media_type_sm" checked="checked">電子資料</label>
+                            <label class="checkbox-inline"><input id="mediatype_doctoral" type="checkbox" value="5"  name="ui_media_type_sm" checked="checked">博士論文</label>
+                            <label class="checkbox-inline"><input id="mediatype_map" type="checkbox" value="6"  name="ui_media_type_sm" checked="checked">地図</label>
+                            <label class="checkbox-inline"><input id="mediatype_audio" type="checkbox" value="7"  name="ui_media_type_sm" checked="checked">録音資料</label>
+                            <label class="checkbox-inline"><input id="mediatype_movie" type="checkbox" value="8"  name="ui_media_type_sm" checked="checked">映像資料</label>
+                            <label class="checkbox-inline"><input id="mediatype_tech" type="checkbox" value="9"  name="ui_media_type_sm" checked="checked">規格・テクニカルレポート類</label>
+                            <label class="checkbox-inline"><input id="mediatype_zassaku" type="checkbox" value="10" name="ui_media_type_sm" checked="checked">雑誌記事索引</label>
+                            <label class="checkbox-inline"><input id="mediatype_etc" type="checkbox" value="11" name="ui_media_type_sm" checked="checked">その他</label>
+                            <button class="btn btn-default btn-xs" id="switch-mediatypes">すべて選択/解除</button>
+                        </div><!-- /#mediatypes -->
+                    </div>
+                </div><!-- /#advanced -->
+
+            </form>
+        </div>
+        <div id="home" >
+            <h3>NDL ラボサーチ</h3>
+            <p style="padding-top: 5px;padding-bottom: 5px;">
+                当館の情報検索サービス「国立国会図書館サーチ」から、外部データベースとの統合検索・横断検索、ヘルプ等の機能を省き、実験的な機能を追加した検索システムです。<br />
+                当館の所蔵資料(図書・雑誌・新聞等)と、雑誌記事索引が検索可能です。
+
+            </p>
+            <dl>
+                <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">現在の追加機能</dt>
+                <dd style="margin-left: 26px;">
+                    <ul style="list-style-type: disc">
+                        <li>JavaScriptを利用した高速化</li>
+                        <li>検索キーワードのオートサジェスト</li>
+                        <li>資料種別での検索、絞り込み</li>
+                        <li>タグクラウドによる絞り込み</li>
+                        <li>ブックマーク機能</li>
+                        <li>レスポンシブデザインに対応</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">対応ブラウザ</dt>
+                <dd style="margin-left: 26px;"><ul style="list-style-type: disc">
+                        <li>Firefox ESR 17.0.8 で動作を検証しております。<br />
+                            できるだけ最新のバージョンでご利用頂くことを推奨いたします。</li>
+                    </ul></dd>
+            </dl>
+        </div>
+        <div id="main" class="container"> 
+            <div class="row">   
+                <div id="result" class="col-md-7 col-md-push-2">
+                    <div id="result-header">
+                        <h2>検索結果一覧<span id="pager-header"></span></h2>
+                        <div id="pager-sort"></div>
+                    </div>
+                    <div id="docs"></div>
+                    <div id="result-footer">
+                        <div id="navigation">
+                            <ul id="pager"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="facet" class="sidebar col-md-2 col-md-pull-7">
+                    <h2 class="mainlabel">検索結果の絞り込み</h2>
+
+                    <ul id="selection"></ul>
+
+                    <div id="ui_media_type-facet"></div>
+                    <div id="issued-facet"></div>
+                    <div id="publisher-facet"></div>
+                    <div id="ndc-facet"></div>
+                    <div id="tagcloud"></div>
+                </div> <!-- /.col -->
+                <div id="advanced-service" class="sidebar col-md-3">
+                    <h2 class="mainlabel">ブックマーク</h2>
+                    <div id="bookmarks"></div>
+                    <div id="recommendation"></div>
+                </div>
+            </div> <!-- /.row -->
+        </div>  
+
+        <!-- フッター -->
+        <div id="footer" class="footer">
+            <ul>
+                <li><a href="http://lab.kn.ndl.go.jp/cms/">NDLラボ</a></li>
+                <li><a href="http://lab.kn.ndl.go.jp/cms/?q=node/13">ご意見・ご要望</a></li>
+            </ul>
+        </div>
+
+        <address>Copyright 2014 National Diet Library. All Rights Reserved.</address>
+
+        <!-- NDL Search Portableの起動 -->
+        <script src="labs/js/config.js"></script>
+        <script src="labs/js/lib/require.js"></script>
+        <script src="labs/js/labs.js"></script>
+    </body>
+</html>
