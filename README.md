@@ -4,6 +4,10 @@ NDL LabSearch Client
 NDL LabSearch Clientは、JavaScriptで実装された[NDLラボサーチ](http://lab.kn.ndl.go.jp/ndls/labs.html)のクライアントアプリケーションです。
 NDLラボサーチのUIをローカル環境下でカスタマイズすることができます。
 
+## デモ
+
+- [http://ndl-labsearch-client-demo.herokuapp.com/labs.html](http://ndl-labsearch-client-demo.herokuapp.com/labs.html)
+
 ## 実行方法
 本リポジトリをダウンロード後、labs.html をブラウザで開いてください。
 
