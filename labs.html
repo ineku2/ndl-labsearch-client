@@ -78,17 +78,14 @@
             </form>
         </div>
         <div id="home" >
-            <h3>NDL ラボサーチ</h3>
-            <p style="padding-top: 5px;padding-bottom: 5px;">
-                当館の情報検索サービス「国立国会図書館サーチ」から、外部データベースとの統合検索・横断検索、ヘルプ等の機能を省き、実験的な機能を追加した検索システムです。<br />
-                当館の所蔵資料(図書・雑誌・新聞等)と、雑誌記事索引が検索可能です。
-
+            <h3 style="margin-bottom:1em">ndl-labsearch-client</h3>
+	    <p>国立国会図書館の情報検索サービス「<a href="https://lab.kn.ndl.go.jp/ndls/" target="_blank">NDLラボサーチ</a>」の検索機能を利用できるクライアントアプリケーションです。</p>
+	    <p>本アプリケーションはHTML・JavaScript・CSSのみからなる静的ファイルとして開発されています。そのため、ユーザが本アプリケーションを自由にカスタマイズすることができます。</p>
             </p>
             <dl>
-                <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">現在の追加機能</dt>
+                <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">主な機能</dt>
                 <dd style="margin-left: 26px;">
                     <ul style="list-style-type: disc">
-                        <li>JavaScriptを利用した高速化</li>
                         <li>検索キーワードのオートサジェスト</li>
                         <li>資料種別での検索、絞り込み</li>
                         <li>タグクラウドによる絞り込み</li>
@@ -100,9 +97,19 @@
             <dl>
                 <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">対応ブラウザ</dt>
                 <dd style="margin-left: 26px;"><ul style="list-style-type: disc">
-                        <li>Firefox ESR 17.0.8 で動作を検証しております。<br />
+                        <li>Firefox 29.0.1 で動作を検証しております。<br />
                             できるだけ最新のバージョンでご利用頂くことを推奨いたします。</li>
                     </ul></dd>
+            </dl>
+            <dl>
+                <dt style="font-weight: bold;margin:0.5em 0 0.5em 0;">ソースコード</dt>
+                <dd style="margin-left: 26px;">
+		  <ul style="list-style-type: disc">
+		    <li>ソースコードはGitHubにMITライセンス下で公開しております。</li>
+		    <li><a href="https://github.com/ineku2/ndl-labsearch-client" target="_blank">コードリポジトリ(on GitHub)</a></li>
+		    <li><a href="https://github.com/ineku2/ndl-labsearch-client/archive/master.zip" target="_blank">ソースコードのダウンロード(zipファイル)</a></li>
+                  </ul>
+		</dd>
             </dl>
         </div>
         <div id="main" class="container"> 
@@ -141,12 +148,10 @@
         <!-- フッター -->
         <div id="footer" class="footer">
             <ul>
-                <li><a href="http://lab.kn.ndl.go.jp/cms/">NDLラボ</a></li>
-                <li><a href="http://lab.kn.ndl.go.jp/cms/?q=node/13">ご意見・ご要望</a></li>
+                <li><a href="https://github.com/ineku2/ndl-labsearch-client">プロジェクトサイト</a></li>
+                <li><a href="https://github.com/ineku2/ndl-labsearch-client/issues">ご意見・ご要望</a></li>
             </ul>
         </div>
-
-        <address>Copyright 2014 National Diet Library. All Rights Reserved.</address>
 
         <!-- NDL Search Portableの起動 -->
         <script src="labs/js/config.js"></script>
