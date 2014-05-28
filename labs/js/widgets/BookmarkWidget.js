@@ -85,7 +85,7 @@
     template_blank: function (){
       return $("<p>")
         .addClass("well")
-        .html("<strong>Tips</strong>: 検索結果中のアイテムをブックマークに登録したい場合は、見出しの横にあるアイコン(<img src='images/bookmark_icon.png' alt='ブックマークアイコン' />)をクリックしてください。");
+        .html("<strong>Tips</strong>: 検索結果中のアイテムをブックマークに登録したい場合は、見出しの横にあるアイコン(<img src='./labs/images/bookmark_icon.png' alt='ブックマークアイコン' />)をクリックしてください。");
     },
     createFieldString: function (doc, field){
       var field_data, tag_name, attributes, value, name = [], item;
