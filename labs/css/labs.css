@@ -543,7 +543,7 @@ h2.mainlabel {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: transparent !important;
-    background-image: url("../../images/icon_paging-arrow_left_normal.png");
+    background-image: url("../images/icon_paging-arrow_left_normal.png");
     background-origin: padding-box;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -559,18 +559,18 @@ h2.mainlabel {
 }
 
 #pager li .pager-prev:hover, #pager li .pager-prev:active {
-    background: url("../../images/icon_paging-arrow_left_normal.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/icon_paging-arrow_left_normal.png") no-repeat scroll 0 0 transparent;
 }
 
 #pager li span.larrow_d {
-    background: url("../../images/icon_paging-arrow_left_disabled.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/icon_paging-arrow_left_disabled.png") no-repeat scroll 0 0 transparent;
 }
 
 #pager li .pager-next {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: transparent !important;
-    background-image: url("../../images/icon_paging-arrow_right_normal.png");
+    background-image: url("../images/icon_paging-arrow_right_normal.png");
     background-origin: padding-box;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -585,10 +585,10 @@ h2.mainlabel {
     width: 16px;
 }
 #pager li .pager-next:hover {
-    background: url("../../images/icon_paging-arrow_right_normal.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/icon_paging-arrow_right_normal.png") no-repeat scroll 0 0 transparent;
 }
 #pager li span.rarrow_d {
-    background: url("../../images/icon_paging-arrow_right_disabled.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/icon_paging-arrow_right_disabled.png") no-repeat scroll 0 0 transparent;
 }
 
 #sort_form,
