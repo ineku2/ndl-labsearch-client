@@ -1,4 +1,4 @@
-NDL LabSearch Client
+NDL LabSearch Client (version: 0.0.2)
 ===================================
 
 NDL LabSearch Clientは、JavaScriptで実装された[NDLラボサーチ](http://lab.kn.ndl.go.jp/ndls/labs.html)のクライアントアプリケーションです。
