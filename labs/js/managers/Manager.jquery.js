@@ -25,6 +25,10 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   variant_fields:[],
 
   setVariantField: function (field_name, expanded_query){
+    if((typeof field_name != 'string') || (typeof expanded_query != 'string')){
+      throw new Error('field_name and expanded_query is needed');
+    }
+
     this.variant_fields.push([field_name, expanded_query]);
     return this.variant_fields;
   },

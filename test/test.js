@@ -42,6 +42,17 @@ require([
 	expect(Manager.setVariantField).to.be.a('function');
       });
 
+      it('has two arguments', function (){
+	expect(function (){ Manager.setVariantField() }).to.throw(Error);
+	expect(function (){ Manager.setVariantField('__test__') }).to.throw(Error);
+	expect(correct_case).to.not.throw(Error);
+      });
+
+      it('type of two arguments should be string', function (){
+	expect(function (){ Manager.setVariantField(12, 0) }).to.throw(Error);
+	expect(function (){ Manager.setVariantField({test:'test'}, [1,2,3]) }).to.throw(Error);
+      });
+
       it('return an array', function (){
 	expect(correct_case()).to.be.instanceof(Array);
       });
