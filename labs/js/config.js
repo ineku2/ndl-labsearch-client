@@ -13,7 +13,9 @@ var require = {
         "StateStore": "../StateStore",
         "history": "jquery.history",
         "store": "store.min",
-        "ParameterHistoryStore": "../ajax-solr/widgets/ParameterHistoryStore"
+        "ParameterHistoryStore": "../ajax-solr/widgets/ParameterHistoryStore",
+	"mocha"    : "../../../test/lib/mocha",
+	"chai"     : "../../../test/lib/chai"
     },
     shim: {
         "jquery": {
@@ -27,7 +29,13 @@ var require = {
         'history': {
             exports: 'History',
             deps: ['jquery']
-         }
+         },
+	'mocha': {
+	    exports: 'mocha'
+	},
+	'chai': {
+	    exports: 'chai'
+	}
     }
 };
 
