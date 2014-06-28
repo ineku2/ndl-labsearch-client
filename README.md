@@ -1,4 +1,4 @@
-NDL LabSearch Client (version: 0.0.2-dev)
+NDL LabSearch Client (version: 0.1.0-dev)
 ===================================
 
 [![Build Status](https://travis-ci.org/ineku2/ndl-labsearch-client.svg?branch=develop)](https://travis-ci.org/ineku2/ndl-labsearch-client)
@@ -13,12 +13,8 @@ NDLラボサーチのUIをローカル環境下でカスタマイズすること
 ## 実行方法
 本リポジトリをダウンロード後、labs.html をブラウザで開いてください。
 
-## テスト
-test.htmlをブラウザで開くと、現在のスクリプトをテストすることができます。
-テストケースを追加・修正するには、test/test.js を編集する必要があります。
-
 ## 開発情報
-随時更新予定です。しばらくお待ちください。
+[リポジトリのWiki](https://github.com/ineku2/ndl-labsearch-client/wiki)をご覧ください。
 
 ## ライセンス
 MITライセンスです。
