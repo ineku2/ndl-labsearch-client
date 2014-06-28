@@ -31,15 +31,17 @@ require([
       Manager = new AjaxSolr.Manager({solrUrl: settings.labs.solrUrl });
     });
 
-    it('is object', function (){
-      expect(Manager).to.be.a('object');
+    afterEach(function (){
+      delete Manager;
+    });
+
+    describe('', function (){
+      it('is object', function (){
+	expect(Manager).to.be.a('object');
+      });
     });
 
     describe('#setStateStore', function (){
-      afterEach(function (){
-	Manager.state_store = undefined;
-      });
-
       it('should return an instance of AjaxSolr.StateStore', function (){
 	expect(Manager.setStateStore()).to.be.instanceof(AjaxSolr.StateStore);
       });
@@ -49,13 +51,16 @@ require([
 	Manager.setStateStore();
 	expect(Manager.state_store).to.be.instanceof(AjaxSolr.StateStore);
       });
-
     });
 
     describe('#setVariantField', function (){
-      var correct_case = function (){ 
-	return Manager.setVariantField('__test__', "(%VALUE%)" );
-      };
+      var correct_case;
+
+      before(function (){
+        correct_case = function (){
+          return Manager.setVariantField('__test__', "(%VALUE%)" );
+        };
+      });
 
       it('is a method of AjaxSolr.Manager', function (){
 	expect(Manager).to.have.property('setVariantField');
@@ -75,6 +80,23 @@ require([
 
       it('return an array', function (){
 	expect(correct_case()).to.be.instanceof(Array);
+      });
+    });
+
+    describe('#expand_query', function (){
+      beforeEach(function (){
+	Manager.setVariantField('__test__', "(test:%VALUE%)");
+      });
+
+      it('should return string object', function (){
+	console.log(Manager.variant_fields);
+	expect( Manager.expand_query('test') ).to.be.a('string');
+      });
+
+      it('should return string object', function (){
+	var target =decodeURIComponent( Manager.expand_query(encodeURIComponent('__test__:query')) );
+	expect(target).to.be.a('string');
+	expect(target).to.equal('(test:query)');
       });
     });
 
