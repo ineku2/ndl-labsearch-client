@@ -14,6 +14,7 @@ var require = {
         "history": "jquery.history",
         "store": "store.min",
         "ParameterHistoryStore": "../ajax-solr/widgets/ParameterHistoryStore",
+	"test"     : "../../../test",
 	"mocha"    : "../../../test/lib/mocha",
 	"chai"     : "../../../test/lib/chai",
 	"sinon"    : "../../../test/lib/sinon"
