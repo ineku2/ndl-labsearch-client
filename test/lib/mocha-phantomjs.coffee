@@ -1,6 +1,6 @@
-/* mocha-phantomjs - v3.5.0
- * https://github.com/metaskills/mocha-phantomjs
- * Released under the MIT license. Copyright (c) 2012 Ken Collins. */
+# mocha-phantomjs - v3.5.0
+# https://github.com/metaskills/mocha-phantomjs
+# Released under the MIT license. Copyright (c) 2012 Ken Collins.
 
 system  = require 'system'
 webpage = require 'webpage'
