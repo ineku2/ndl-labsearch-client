@@ -20,8 +20,11 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   setStateStore: function (){
     this.state_store = new AjaxSolr.StateStore();
     this.state_store.manager = this;
+
+    return this.state_store;
   },
 
+  state_store:null,
   variant_fields:[],
 
   setVariantField: function (field_name, expanded_query){

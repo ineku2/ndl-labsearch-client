@@ -35,6 +35,23 @@ require([
       expect(Manager).to.be.a('object');
     });
 
+    describe('#setStateStore', function (){
+      afterEach(function (){
+	Manager.state_store = undefined;
+      });
+
+      it('should return an instance of AjaxSolr.StateStore', function (){
+	expect(Manager.setStateStore()).to.be.instanceof(AjaxSolr.StateStore);
+      });
+
+      it('set AjaxSolr.StateStore in Manager.state_store', function (){
+	expect(Manager.state_store).to.be.a('null');
+	Manager.setStateStore();
+	expect(Manager.state_store).to.be.instanceof(AjaxSolr.StateStore);
+      });
+
+    });
+
     describe('#setVariantField', function (){
       var correct_case = function (){ 
 	return Manager.setVariantField('__test__', "(%VALUE%)" );
