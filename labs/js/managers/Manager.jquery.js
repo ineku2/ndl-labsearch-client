@@ -62,10 +62,12 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
       options.url = this.solrUrl + servlet + '?' + string + '&wt=json&json.wrf=?';
       options.crossDomain = true;
     }
-    jQuery.ajax(options).done(handler).fail(errorHandler);
-    if (!!self.store.save){
+
+    if (!!self.store && !!self.store.save){
       self.store.save(); 
     }
+
+    return jQuery.ajax(options).done(handler).fail(errorHandler);
   }
 });
 
