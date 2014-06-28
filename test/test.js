@@ -61,6 +61,12 @@ require([
   });
 
   //テストの実行
-  mocha.checkLeaks();
-  mocha.run();
+  $(function (){
+    mocha.checkLeaks();
+    if (window.mochaPhantomJS) {
+      window.mochaPhantomJS.run();
+    } else {
+      mocha.run();
+    }
+  });
 });

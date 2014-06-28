@@ -1,0 +1,2 @@
+language: javascript
+script: phantomjs test/lib/mocha-phantomjs.coffee test.html
