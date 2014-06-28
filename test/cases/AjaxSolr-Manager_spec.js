@@ -75,7 +75,6 @@ define([
 	});
 
 	it('should return string object', function (){
-	  console.log(Manager.variant_fields);
 	  expect( Manager.expand_query('test') ).to.be.a('string');
 	});
 
