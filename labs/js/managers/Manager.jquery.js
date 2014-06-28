@@ -20,21 +20,33 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   setStateStore: function (){
     this.state_store = new AjaxSolr.StateStore();
     this.state_store.manager = this;
+
+    return this.state_store;
   },
 
-  variant_fields:[],
+  state_store:null,
 
   setVariantField: function (field_name, expanded_query){
+    if((typeof field_name != 'string') || (typeof expanded_query != 'string')){
+      throw new Error('field_name and expanded_query is needed');
+    }
+
+    if(!this.variant_fields){
+      this.variant_fields = [];
+    }
+
     this.variant_fields.push([field_name, expanded_query]);
     return this.variant_fields;
   },
   expand_query: function (string){
-    var field_exp, query_template, expanded = decodeURI(string); 
+    var field_exp, query_template, expanded = string, variant_fields = this.variant_fields; 
 
-    for(var i=0, l=this.variant_fields.length;i<l;i++){
-      field_exp = new RegExp(this.variant_fields[i][0]+'%3A((?:[^\\s&]|(?:AND)|(?:OR))+)', 'g');
-      query_template = this.variant_fields[i][1].replace(/%VALUE%/g, "$1");
-      expanded = expanded.replace(field_exp, query_template);
+    if (variant_fields && variant_fields.length > 0){
+      for(var i=0, l=variant_fields.length;i<l;i++){
+	field_exp = new RegExp(variant_fields[i][0]+'%3A((?:[^\\s&]|(?:AND)|(?:OR))+)', 'g');
+	query_template = variant_fields[i][1].replace(/%VALUE%/g, "$1");
+	expanded = expanded.replace(field_exp, query_template);
+      }
     }
 
     return expanded;
@@ -58,10 +70,12 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
       options.url = this.solrUrl + servlet + '?' + string + '&wt=json&json.wrf=?';
       options.crossDomain = true;
     }
-    jQuery.ajax(options).done(handler).fail(errorHandler);
-    if (!!self.store.save){
+
+    if (!!self.store && !!self.store.save){
       self.store.save(); 
     }
+
+    return jQuery.ajax(options).done(handler).fail(errorHandler);
   }
 });
 
