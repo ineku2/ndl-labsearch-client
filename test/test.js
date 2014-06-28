@@ -5,6 +5,7 @@ require([
   "settings",
   "mocha",
   "chai",
+  "sinon",
   "widgets/ResultWidget",
   "widgets/CurrentSearchWidget",
   "widgets/FacetWidget",
@@ -13,7 +14,7 @@ require([
   "widgets/BookmarkWidget",
   "widgets/RecommenderWidget",
   "widgets/TagcloudWidget",
-], function ($, store, NdlSearch, settings, mocha, chai){
+], function ($, store, NdlSearch, settings, mocha, chai, sinon){
 
   //mochaのセットアップ
   mocha.setup('bdd');

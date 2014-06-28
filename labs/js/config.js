@@ -15,7 +15,8 @@ var require = {
         "store": "store.min",
         "ParameterHistoryStore": "../ajax-solr/widgets/ParameterHistoryStore",
 	"mocha"    : "../../../test/lib/mocha",
-	"chai"     : "../../../test/lib/chai"
+	"chai"     : "../../../test/lib/chai",
+	"sinon"    : "../../../test/lib/sinon"
     },
     shim: {
         "jquery": {
@@ -35,6 +36,9 @@ var require = {
 	},
 	'chai': {
 	    exports: 'chai'
+	},
+	'sinon': {
+	    exports: 'sinon'
 	}
     }
 };
