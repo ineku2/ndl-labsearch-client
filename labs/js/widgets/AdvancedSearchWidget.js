@@ -37,7 +37,7 @@
       var self = this;
       /* キーワードのクエリを生成 */
       var keyword = $(target).find("#keyword").val();
-      var query_keyword = keyword.match(/^\s*$/) ? "" : "__any__:(" + keyword + ")";
+      var query_keyword = keyword.match(/^\s*$/) ? "" : "__any__:" + keyword;
 
       /* テキストフィールドの値からクエリを生成 */
       var advanced_query = self.createFieldsQuery(target);
