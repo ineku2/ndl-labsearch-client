@@ -24,8 +24,8 @@
       }
 
       $(this.target).submit(function(e) {
-	var target = this;
-	self.search(target);
+        var target = this;
+        self.search(target);
 
         return false; 
       });
@@ -33,11 +33,10 @@
       // initをオーバーロードするときはselfを返さないとrequireがエラーになる
       return self;
     },
-    search: function (target){
+    buildQuery: function (target){
       var self = this;
       /* キーワードのクエリを生成 */
       var keyword = $(target).find("#keyword").val();
-
       var query_keyword = keyword.match(/^\s*$/) ? "" : "__any__:" + keyword;
 
       /* テキストフィールドの値からクエリを生成 */
@@ -47,14 +46,20 @@
       var media_type_query = self.createMediaTypeQuery(target);
 
       /* 最終的なクエリの生成 */
-      query = $([query_keyword.replace(/\s+/,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
+      query = $([query_keyword.replace(/(\s|　|(?:AND))+/g,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
       if (query.match(/^\s*$/)){
         query = "*:*"
       }
 
+      return query;
+    },
+    search: function (target){
+      var self = this;
+      var query = self.buildQuery(target);
+
       /* 検索の実行 */
       if (self.set(query)) {
-	self.doRequest();
+        self.doRequest();
       }
 
       return false;
@@ -84,11 +89,11 @@
       }
 
       for (var i = 0; i < self.keyword_fields.length; i++) {
-	var field = self.keyword_fields[i];
-	query_keyword_list.push(field + ':' + converted_keyword);
+        var field = self.keyword_fields[i];
+        query_keyword_list.push(field + ':' + converted_keyword);
       }
       if (keyword != "" && query_keyword_list.length > 0) { 
-	var query_keyword = "("+query_keyword_list.join(" OR ")+")"
+        var query_keyword = "("+query_keyword_list.join(" OR ")+")"
       }
 
       return query_keyword;
