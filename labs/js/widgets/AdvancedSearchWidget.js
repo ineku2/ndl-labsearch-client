@@ -46,7 +46,7 @@
       var media_type_query = self.createMediaTypeQuery(target);
 
       /* 最終的なクエリの生成 */
-      query = $([query_keyword.replace(/(\s|　)+/,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
+      query = $([query_keyword.replace(/(\s|　|(?:AND))+/g,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
       if (query.match(/^\s*$/)){
         query = "*:*"
       }
