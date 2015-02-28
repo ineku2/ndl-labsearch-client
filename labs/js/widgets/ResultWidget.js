@@ -100,7 +100,7 @@
                   ('<div class="item" id="%iss_id%"><h3 class="item-header clearfix"><a href="%seealso%" target="_blank">%title%</a><a id="bookmark-%iss_id%" href="#%iss_id%" class="bookmark-link">[bookmark]</a></h3></div>')
                     .replace(/%iss_id%/g, doc.id)
                     .replace(/%title%/g, doc.title_view)
-                    .replace(/%seealso%/g, self.createNdlOpacUri(doc))
+                    .replace(/%seealso%/g, self.createSeeAlsoUri(doc))
             );
             output.append(list);
 
@@ -133,6 +133,21 @@
                    }
                    expanded = !expanded;
                  });
+        },
+        createSeeAlsoUri: function (doc){
+          var self        = this;
+          var uri         = doc.seeAlso;
+          var ndlopac_uri = self.createNdlOpacUri(doc);
+
+          if (!uri) {
+            if (!ndlopac_uri) {
+              return null;
+            }else{
+              return ndlopac_uri;
+            }
+          } else {
+            return uri;
+          }
         },
         createNdlOpacUri: function (doc){
           url   = "https://ndlopac.ndl.go.jp/F/?func=find-c&ccl_term=001+%3D+";
