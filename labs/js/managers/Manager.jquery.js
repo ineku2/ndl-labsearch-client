@@ -43,9 +43,9 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
 
     if (variant_fields && variant_fields.length > 0){
       for(var i=0, l=variant_fields.length;i<l;i++){
-	field_exp = new RegExp(variant_fields[i][0]+'%3A((?:[^\\s&]|(?:AND)|(?:OR))+)', 'g');
-	query_template = variant_fields[i][1].replace(/%VALUE%/g, "$1");
-	expanded = expanded.replace(field_exp, query_template);
+        field_exp = new RegExp(variant_fields[i][0]+'%3A((?:[^\\s&]|(?:AND)|(?:OR))+)', 'g');
+        query_template = variant_fields[i][1].replace(/%VALUE%/g, "$1");
+        expanded = expanded.replace(field_exp, query_template);
       }
     }
 
