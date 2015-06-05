@@ -4,7 +4,7 @@ require([], function (){
   var settings = {
     'labs': {
       'solrUrl': '<INPUT YOUR SOLR URL>',
-      'recommenderUrl': "http://lab.kn.ndl.go.jp/exp/kui/api/solr/"
+      'recommenderUrl': "http://lab.ndl.go.jp/exp/kui/api/solr/"
     }
   }
 
