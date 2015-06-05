@@ -1,4 +1,4 @@
-NDL LabSearch Client (version: 0.1.2-dev)
+NDL LabSearch Client (version: 0.1.3-dev)
 ===================================
 
 [![Build Status](https://travis-ci.org/ineku2/ndl-labsearch-client.svg?branch=develop)](https://travis-ci.org/ineku2/ndl-labsearch-client)
